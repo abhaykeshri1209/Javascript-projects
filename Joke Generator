@@ -1,0 +1,78 @@
+//Joke generator 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <title>Jokes Generator</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+   background-color: rgb(174, 196, 174);
+    border-radius: 10px solid black;
+    margin-top: 200px;
+    width: 400px;
+    height: 300px;
+    margin: 50px auto;
+
+}
+#button{
+    width: 100px;
+    height: 45px;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: all linear 0.3s;
+    font-weight: bold;
+}
+
+</style>
+<body>
+    <div class="container">
+         <h1>Generate Random Jokes</h1>
+         <p id="Jokes"></p>
+         <button id="button">Generate </button>
+    </div>
+    <script>
+        const arr=[   
+
+       " What does a storm cloud wear under his raincoat? Thunderwear.",
+
+ 'What do kids play when their mom is using the phone? Bored games.',
+
+" What do you call an ant who fights crime? A vigilANTe!",
+
+" Why are snails slow? Because they're carrying a house on their back.",
+
+" What's the smartest insect? A spelling bee!"
+        ]
+
+        const button=document.querySelector("#button")
+        const para =document.querySelector("#Jokes");
+        button.addEventListener( 'click',function(){
+ const randomIndex = Math.floor(Math.random() * arr.length);
+ 
+ para.innerText=arr[randomIndex];
+
+
+        })
+
+    </script>
+   
+    
+</body>
+</html>
