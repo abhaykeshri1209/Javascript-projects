@@ -1,0 +1,63 @@
+// LIVE CLOCK
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Clock</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: darkgray;
+    }
+    .clock{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+        height: 84px;
+        background-color: lightseagreen;
+gap: 40px;
+margin-top: 300px;
+    }
+</style>
+<body>
+    <div class="clock">
+        <span  id="hours"  class="time"></span>:<span id="minutes" class="time">
+
+        </span>: <span id="seconds " class="time"></span>
+         
+  
+    </div>
+    <script>
+function ChangeTime() {
+    let a = new Date();
+    let h = a.getHours();
+    let m = a.getMinutes();
+    let s = a.getSeconds();
+    console.log(h, m, s);
+    let time=document.getElementsByClassName("time")
+    time[0].innerHTML=h
+    time[1].innerHTML=m
+    time[2].innerHTML=s
+
+}
+
+
+setInterval(ChangeTime, 1000);
+
+      </script>
+    
+</body>
+</html>
