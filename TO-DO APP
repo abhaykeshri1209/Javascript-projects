@@ -1,0 +1,123 @@
+// to-do app
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo List</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+    .container {
+      width: 40%;
+      background-color: wheat;
+      border: 1px solid black;
+      border-radius: 10px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      gap: 20px;
+    }
+    .addContainer {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+    }
+    .addContainer > input {
+      flex: 1;
+      height: 40px;
+      padding: 5px;
+    }
+    .addContainer > button {
+      background-color: lightseagreen;
+      color: black;
+      width: 100px;
+      height: 40px;
+      transition: all linear 0.3s;
+      border-radius: 5px;
+      border: none;
+    }
+    .listContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: aliceblue;
+      padding: 12px;
+      border-radius: 4px;
+    }
+    .deleteBtn {
+      background-color: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="heading">Todo List</h1>
+
+  <div class="addContainer">
+    <input type="text" placeholder="Add your task here" />
+    <button class="addBtn">Add</button>
+  </div>
+
+  <div class="listContainer"></div>
+</div>
+
+<script>
+  const button = document.querySelector(".addBtn");
+  const listContainer = document.querySelector(".listContainer");
+  const input = document.querySelector("input");
+
+  button.addEventListener("click", function () {
+    const taskText = input.value.trim();
+    if (taskText === "") {
+      alert("Please enter a task!");
+      return;
+    }
+
+    const taskDiv = document.createElement("div");
+    taskDiv.classList.add("list");
+
+    const taskPara = document.createElement("p");
+    taskPara.innerText = taskText;
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("deleteBtn");
+    deleteBtn.innerText = "❌";
+
+    // Delete function
+    deleteBtn.addEventListener("click", () => {
+      listContainer.removeChild(taskDiv);
+    });
+
+    taskDiv.appendChild(taskPara);
+    taskDiv.appendChild(deleteBtn);
+
+    listContainer.appendChild(taskDiv);
+
+    input.value = ""; // Clear input after adding
+  });
+</script>
+
+</body>
+</html>
