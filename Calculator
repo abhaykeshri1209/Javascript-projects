@@ -1,0 +1,114 @@
+//Calculator using html css and javasceipt 
+
+here is full code 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+body{
+  background-color: lightseagreen;
+
+}
+
+.first button{
+  width: 65px;
+  height: 35px;
+  background-color: orange;
+}
+.first input{
+  width: 200px;
+  height: 35px;
+  font: bold;
+ 
+}
+.second button{
+  width: 65px;
+   height: 35px;
+    font: bold;
+}
+.third button{
+   width: 65px;
+   height: 35px;
+    font: bold;
+}
+.forth button{
+   width: 65px;
+   height: 35px;
+    font: bold;
+}
+.five button{
+   width: 65px;
+   height: 35px;
+   font: bold;
+}
+.container{
+  margin-left: 500px;
+  margin-top: 200PX;
+ 
+}
+
+  
+</style>
+<body>
+<div class="container">
+<div class="first">
+  <input type="text" placeholder="" id="a">
+  <button onclick="clr()">C</button>
+</div>
+<div class="second">
+  <button  onclick="pick(1)">1</button>
+  <button onclick="pick(2)">2</button>
+  <button  onclick="pick(3)">3</button>
+  <button  onclick="pick('/')">/</button>
+</div>
+
+<div class="third">
+  <button  onclick="pick(4)">4</button>
+  <button  onclick="pick(5)">5</button>
+  <button  onclick="pick(6)">6</button>
+  <button  onclick="pick('*')">*</button>
+</div>
+<div class="forth">
+  <button  onclick="pick(7)">7</button>
+  <button  onclick="pick(8)">8</button>
+  <button  onclick="pick(9)">9</button>
+  <button  onclick="pick('-')">-</button>
+</div>
+<div class="five">
+  <button   onclick="pick('.')">.</button>
+  <button  onclick="pick(0)">0</button>
+  <button  onclick="solve()">=</button>
+  <button  onclick="pick('+')">+</button>
+</div>
+</div>
+<script>
+
+function pick(val){
+  document.getElementById("a").value += val;
+
+}
+
+function solve(val){
+   var x=document.getElementById("a").value;
+   var y= eval(x);
+   document.getElementById("a").value=y
+
+}
+function clr(){
+  document.getElementById("a").value =" ";
+}
+
+</script>
+  
+
+</body>
+   
+    
+</html>
